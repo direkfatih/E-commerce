@@ -22,7 +22,7 @@ const Info = () => {
             <i className="bi bi-star-half"></i>
           </li>
         </ul>
-        <span>2 reviews</span>
+        <span>2 Yorum</span>
       </div>
       <div className="product-price">
         <s className="old-price">900₺</s>
