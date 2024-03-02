@@ -1,10 +1,11 @@
 import CommentForm from "./CommentForm";
 import CommentItem from "./CommentItem";
-import "./Comments.css"
+import PropTypes from "prop-types";
+import "./Comments.css";
 
-const Comments = () => {
+const Comments = ({ active }) => {
   return (
-    <div className="tab-panel-reviews">
+    <div className={`tab-panel-reviews ${active}`}>
       <h3>Baharlık ceket için 2 yorum</h3>
       <div className="comments">
         <ol className="comment-list">
@@ -22,3 +23,7 @@ const Comments = () => {
 };
 
 export default Comments;
+
+Comments.propTypes = {
+  active: PropTypes.string,
+};
