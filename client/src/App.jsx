@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   return (
     <Routes>
-      <Route path="/anasayfa" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/kategoriler" element={<ShopPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/iletişim" element={<ContactPage />} />

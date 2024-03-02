@@ -103,7 +103,7 @@ const Footer = () => {
           <div className="footer-widgets">
             <div className="brand-info">
               <div className="footer-logo">
-                <a href="index.html" className="logo">
+                <a href="/" className="logo">
                   <img src="/img/logo.png" alt="" />
                 </a>
               </div>
