@@ -1,37 +1,36 @@
-const CommentItem = () => {
+import PropTypes from "prop-types";
+
+const CommentItem = ({ commentItem }) => {
+  const { comments, user } = commentItem;
+  const { text, createdAt, rating } = comments;
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  const formattedDate = new Date(createdAt).toLocaleDateString(
+    "tr-TR",
+    options
+  );
+
   return (
     <li className="comment-item">
       <div className="comment-avatar">
-        <img src="/img/avatars/avatar1.jpg" alt="" />
+        <img src={user.avatar} alt="" width={60} />
       </div>
       <div className="comment-text">
         <ul className="comment-star">
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
+          {Array.from({ length: rating }, (_, index) => {
+            return (
+              <li key={index}>
+                <i className="bi bi-star-fill"></i>
+              </li>
+            );
+          })}
         </ul>
         <div className="comment-meta">
-          <strong>admin</strong>
+          <strong> {user.username}</strong>
           <span> - </span>
-          <time>25 Ocak 2023</time>
+          <time>{formattedDate}</time>
         </div>
         <div className="comment-description">
-          <p>
-            Sed perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium.
-          </p>
+          <p>{text}</p>
         </div>
       </div>
     </li>
@@ -39,3 +38,7 @@ const CommentItem = () => {
 };
 
 export default CommentItem;
+
+CommentItem.propTypes = {
+  commentItem: PropTypes.object,
+};

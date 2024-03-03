@@ -8,7 +8,7 @@ const BlogItem = () => {
       </a>
       <div className="blog-info">
         <div className="blog-info-top">
-          <span>25 Ocak 2023 </span>-<span> 0 Comments</span>
+          <span>25 Ocak 2023 </span>-<span> 0 Yorum</span>
         </div>
         <div className="blog-info-center">
           <a href="#">Modanın kalbi burada atıyor.</a>

@@ -9,6 +9,16 @@ const Header = ({ setIsSearchShow }) => {
   const user = localStorage.getItem("user");
   const { pathname } = useLocation();
 
+  const cartItemTotals = cartItems.map((item) => {
+    const itemTotal = item.quantity;
+
+    return itemTotal;
+  });
+
+  const subQuantity = cartItemTotals.reduce((currentValue, previousValue) => {
+    return previousValue + currentValue;
+  }, 0);
+
   return (
     <header>
       <div className="global-notification">
@@ -222,9 +232,7 @@ const Header = ({ setIsSearchShow }) => {
                 <div className="header-cart">
                   <Link to={"/sepet"} className="header-cart-link">
                     <i className="bi bi-bag"></i>
-                    <span className="header-cart-count">
-                      {cartItems.length}
-                    </span>
+                    <span className="header-cart-count">{subQuantity}</span>
                   </Link>
                 </div>
                 {user && (

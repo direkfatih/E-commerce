@@ -180,7 +180,7 @@ const CreateProductPage = () => {
           name="sizes"
           rules={[
             {
-              required: true,
+              required: false,
               message: "En az 1 ürün beden ölçüsü giriniz",
             },
           ]}

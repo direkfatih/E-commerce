@@ -27,7 +27,7 @@ const CategoryPage = () => {
       key: "actions",
       render: (_, record) => (
         <Space>
-          <Button type="primary" onClick={() => navigate(`/admin/categories/update/${record._id}`)}>Düzenle</Button>
+          <Button type="primary" onClick={() => navigate(`/admin/categories/update/${record._id}`)}>Güncelle</Button>
           <Popconfirm
             title="Kategoriyi Sil"
             description="Kategoriyi silmek istediğinizden emin misiniz?"

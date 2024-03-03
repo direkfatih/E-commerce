@@ -5,8 +5,8 @@ const CartPage = () => {
   return (
     <div>
 
-        <Cart />
-
+      <Cart />
+      
     </div>
   );
 };

@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
 
-const CommentSchema = mongoose.Schema({
-  text: { type: String, required: true },
-  rating: { type: Number, required: true },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-});
-
+const CommentSchema = mongoose.Schema(
+  {
+    text: { type: String, required: true },
+    rating: { type: Number, required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  },
+  { timestamps: true }
+);
 const ProductSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
     img: [{ type: String, required: true }],
-    comment: [CommentSchema],
+    comments: [CommentSchema],
     colors: [{ type: String, required: true }],
     sizes: [{ type: String, required: true }],
     price: {

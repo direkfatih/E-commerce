@@ -53,7 +53,12 @@ const Login = () => {
               Kullanıcı Adı veya Eposta Adresi
               <span className="required">*</span>
             </span>
-            <input type="text" name="email" onChange={handleInputChange} />
+            <input
+              type="text"
+              name="email"
+              onChange={handleInputChange}
+              required
+            />
           </label>
         </div>
         <div>
@@ -65,6 +70,7 @@ const Login = () => {
               type="password"
               name="password"
               onChange={handleInputChange}
+              required
             />
           </label>
         </div>
