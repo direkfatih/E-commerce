@@ -51,30 +51,7 @@ const Header = ({ setIsSearchShow }) => {
                       }`}
                     >
                       ANASAYFA
-                      <i className="bi bi-chevron-down"></i>
                     </Link>
-                    <div className="menu-dropdown-wrapper">
-                      <ul className="menu-dropdown-content">
-                        <li>
-                          <a href="#">Ev Temizliği</a>
-                        </li>
-                        <li>
-                          <a href="#">Ev Koleksiyonları</a>
-                        </li>
-                        <li>
-                          <a href="#">Mini Ev Aletleri</a>
-                        </li>
-                        <li>
-                          <a href="#">Modern Ev Ürünleri</a>
-                        </li>
-                        <li>
-                          <a href="#">Ev Stili</a>
-                        </li>
-                        <li>
-                          <a href="#">Eşsiz Ev Ürünleri</a>
-                        </li>
-                      </ul>
-                    </div>
                   </li>
                   <li className="menu-list-item megamenu-wrapper">
                     <Link
@@ -84,40 +61,37 @@ const Header = ({ setIsSearchShow }) => {
                       }`}
                     >
                       KATEGORİLER
-                      <i className="bi bi-chevron-down"></i>
+                      <i
+                        className="bi bi-chevron-down"
+                        style={{ marginLeft: 3 }}
+                      ></i>
                     </Link>
                     <div className="menu-dropdown-wrapper">
                       <div className="menu-dropdown-megamenu">
                         <div className="megamenu-links">
                           <div className="megamenu-products">
-                            <h3 className="megamenu-products-title">Giyim</h3>
+                            <h3 className="megamenu-products-title">En Çok Tercih Edilenler</h3>
                             <ul className="megamenu-menu-list">
                               <li>
                                 <a href="#">T-Shirt</a>
                               </li>
                               <li>
-                                <a href="#">Sweatshirt</a>
+                                <a href="#">Akıllı Telefon</a>
                               </li>
                               <li>
-                                <a href="#">Dış Giyim</a>
+                                <a href="#">Bilgisayar</a>
                               </li>
                               <li>
-                                <a href="#">Takım Elbise</a>
+                                <a href="#">Televizyon</a>
                               </li>
                               <li>
-                                <a href="#">Elbise</a>
+                                <a href="#">Elektronik Aksesuarlar</a>
                               </li>
                               <li>
-                                <a href="#">Eşofman</a>
+                                <a href="#">Akıllı Saat</a>
                               </li>
                               <li>
-                                <a href="#">Pantolon</a>
-                              </li>
-                              <li>
-                                <a href="#">Ayakkabı</a>
-                              </li>
-                              <li>
-                                <a href="#">Aksesuar</a>
+                                <a href="#">Kulaklık</a>
                               </li>
                             </ul>
                           </div>
@@ -226,12 +200,12 @@ const Header = ({ setIsSearchShow }) => {
                 >
                   <i className="bi bi-search"></i>
                 </button>
-                <a href="#">
+                <Link to={"/favoriler"}>
                   <i className="bi bi-heart"></i>
-                </a>
+                </Link>
                 <div className="header-cart">
                   <Link to={"/sepet"} className="header-cart-link">
-                    <i className="bi bi-bag"></i>
+                    <i className="bi bi-cart"></i>
                     <span className="header-cart-count">{subQuantity}</span>
                   </Link>
                 </div>

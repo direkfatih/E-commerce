@@ -19,8 +19,9 @@ import CreateCouponPage from "./pages/Admin/Coupons/CreateCouponPage";
 import UpdateCouponPage from "./pages/Admin/Coupons/UpdateCouponPage";
 import Success from "./pages/Success";
 import OrderPage from "./pages/Admin/OrderPage";
-import "./App.css";
 import DashboardPage from "./pages/Admin/DashboardPage";
+import FavouritePage from "./pages/FavouritePage";
+import "./App.css";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/iletişim" element={<ContactPage />} />
       <Route path="/sepet" element={<CartPage />} />
+      <Route path="/favoriler" element={<FavouritePage />} />
       <Route path="/hesap" element={<AccountPage />} />
       <Route path="/product/:id" element={<ProductDetailsPage />} />
       <Route path="/blog/:id" element={<BlogDetailsPage />} />

@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import "./Info.css";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { CartContext } from "../../../context/CartProvider";
+import { message } from "antd";
 
 const Info = ({ singleProduct }) => {
   const quantityRef = useRef();
@@ -16,6 +17,30 @@ const Info = ({ singleProduct }) => {
   const filteredCard = cartItems.find(
     (cartItem) => cartItem._id === singleProduct._id
   );
+
+  const random = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+
+  const [categories, setCategories] = useState([]);
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
+  const formattedColors = singleProduct.colors.join(", ");
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/categories`);
+
+        if (response.ok) {
+          const data = await response.json();
+          setCategories(data);
+        } else {
+          message.error("Veri getirme başarısız.");
+        }
+      } catch (error) {
+        console.log("Veri hatası:", error);
+      }
+    };
+    fetchCategories();
+  }, [apiUrl]);
 
   return (
     <div className="product-info">
@@ -122,15 +147,15 @@ const Info = ({ singleProduct }) => {
       <div className="product-meta">
         <div className="product-sku">
           <span>SKU:</span>
-          <strong>BE45VGRT</strong>
+          <strong>BE{random}GRT</strong>
         </div>
         <div className="product-categories">
-          <span>Categories:</span>
-          <strong>Pants , Women</strong>
+          <span>Kategori:</span>
+          <strong></strong>
         </div>
         <div className="product-tags">
-          <span>Tags:</span>
-          <a href="#">black</a>,<a href="#">white</a>
+          <span>Renkler:</span>
+          <strong>{formattedColors}</strong>
         </div>
       </div>
     </div>

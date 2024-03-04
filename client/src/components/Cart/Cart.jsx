@@ -26,7 +26,7 @@ const Cart = () => {
           </div>
         ) : (
           <h2>
-            <i className="bi bi-bag"></i> Sepetinde ürün bulunmamaktadır.
+            <i className="bi bi-cart"></i> Sepetinde ürün bulunmamaktadır.
           </h2>
         )}
       </div>

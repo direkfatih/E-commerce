@@ -21,10 +21,10 @@ const ProductItem = ({ productItem }) => {
   return (
     <div className="product-item glide__slide glide__slide--active">
       <div className="product-image">
-        <a href="#">
+        <Link to={`product/${productItem._id}`} className="product-link">
           <img src={productItem.img[0]} alt="" className="img1" />
           <img src={productItem.img[1]} alt="" className="img2" />
-        </a>
+        </Link>
       </div>
       <div className="product-info">
         <a href="$" className="product-title">
@@ -63,7 +63,7 @@ const ProductItem = ({ productItem }) => {
             }
             disabled={filteredCart}
           >
-            <i className="bi bi-basket-fill"></i>
+            <i className="bi bi-cart-fill"></i>
           </button>
           <button>
             <i className="bi bi-heart-fill"></i>
